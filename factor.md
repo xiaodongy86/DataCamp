@@ -35,6 +35,7 @@ A nominal variable is a categorical variable without an implied order. This mean
 In contrast, ordinal variables do have a natural ordering. Consider for example the categorical variable temperature_vector with the categories: "Low", "Medium" and "High". Here it is obvious that "Medium" stands above "Low", and "High" stands above "Medium".
 
 **Animals**
+
 animals_vector <- c("Elephant", "Giraffe", "Donkey", "Horse")
 factor_animals_vector <- factor(animals_vector)
 factor_animals_vector
@@ -43,6 +44,7 @@ factor_animals_vector
 > 
 
 **Temperature**
+
 temperature_vector <- c("High", "Low", "High","Low", "Medium")
 factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
 factor_temperature_vector
@@ -69,4 +71,34 @@ factor_survey_vector <- factor(survey_vector)
 levels(factor_survey_vector) <- c("Female","Male")
 
 factor_survey_vector
+
+#Code to build factor_survey_vector
+
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+
+#Specify the levels of factor_survey_vector
+
+levels(factor_survey_vector) <-c("Female","male")
+factor_survey_vector
+
+## Summarizing a factor
+
+After finishing this course, one of your favorite functions in R will be summary(). This will give you a quick overview of the contents of a variable:
+
+summary(my_var)
+Going back to our survey, you would like to know how many "Male" responses you have in your study, and how many "Female" responses. The summary() function gives you the answer to this question.
+
+#Build factor_survey_vector with clean levels
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+levels(factor_survey_vector) <- c("Female", "Male")
+factor_survey_vector
+
+#Generate summary for survey_vector
+summary(survey_vector)
+
+#Generate summary for factor_survey_vector
+summary(factor_survey_vector)
+
 
