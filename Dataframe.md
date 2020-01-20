@@ -58,6 +58,7 @@ rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
 rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 **#Create a data frame from the vectors**
+
 planets_df <- data.frame(name,type,diameter,rotation,rings)
 #name                    type diameter rotation rings
 #1 Mercury Terrestrial planet    0.382    58.64 FALSE
