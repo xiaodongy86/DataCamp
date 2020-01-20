@@ -50,6 +50,7 @@ After doing some high-quality research on Wikipedia, you feel confident enough t
 You construct a data frame with the data.frame() function. As arguments, you pass the vectors from before: they will become the different columns of your data frame. Because every column has the same length, the vectors you pass should also have the same length. But don't forget that it is possible (and likely) that they contain different types of data.
 
 **#Definition of vectors**
+
 name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
 
 type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
@@ -65,7 +66,7 @@ rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
 
 planets_df <- data.frame(name,type,diameter,rotation,rings)
 
-     name               type diameter rotation rings
+   name               type   diameter rotation rings
 
 1 Mercury Terrestrial planet    0.382    58.64 FALSE
 
