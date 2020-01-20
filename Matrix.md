@@ -12,7 +12,8 @@ The first argument is the collection of elements that R will arrange into the ro
 The argument byrow indicates that the matrix is filled by the rows. If we want the matrix to be filled by the columns, we just place byrow = FALSE.
 The third argument nrow indicates that the matrix should have three rows.
 
-# Construct a matrix with 3 rows that contain the numbers 1 up to 9
+**#Construct a matrix with 3 rows that contain the numbers 1 up to 9**
+
 matrix(1:9, byrow = TRUE, nrow = 3)
 
 ## Analyze matrices, you shall
@@ -68,7 +69,8 @@ You can add a column or multiple columns to a matrix with the cbind() function, 
 big_matrix <- cbind(matrix1, matrix2, vector1 ...)
 
 
-# Bind the new variable worldwide_vector as a column to star_wars_matrix
+**#Bind the new variable worldwide_vector as a column to star_wars_matrix**
+
 all_wars_matrix <- cbind(star_wars_matrix,worldwide_vector)
 
 ## Adding a row
