@@ -1,4 +1,5 @@
 #Factor
+
 What's a factor and why would you use it?
 
 In this chapter you dive into the wonderful world of factors.
