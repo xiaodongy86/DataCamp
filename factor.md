@@ -113,3 +113,15 @@ But this is not always the case! Sometimes you will also deal with factors that 
 
 Let us say that you are leading a research team of five data analysts and that you want to evaluate their performance. To do this, you track their speed, evaluate each analyst as "slow", "medium" or "fast", and save the results in speed_vector.
 
+**#Create speed_vector**
+
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+
+**#Convert speed_vector to ordered factor vector**
+
+factor_speed_vector <- factor(speed_vector,ordered = TRUE,levels = c("slow","medium","fast"))
+
+**#Print factor_speed_vector**
+
+factor_speed_vector
+summary(factor_speed_vector)
