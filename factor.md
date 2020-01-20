@@ -1,6 +1,6 @@
-## Factor
+# Factor
 
-# What's a factor and why would you use it?
+## What's a factor and why would you use it?
 
 In this chapter you dive into the wonderful world of factors.
 
@@ -15,7 +15,7 @@ A good example of a categorical variable is sex. In many circumstances you can l
 (Sometimes you may need different categories. For example, you may need to consider chromosomal variation, hermaphroditic animals, or different cultural norms, but you will always have a finite number of categories.)
 
 
-# What's a factor and why would you use it? (2)
+## What's a factor and why would you use it? (2)
 
 To create factors in R, you make use of the function factor(). First thing that you have to do is create a vector that contains all the observations that belong to a limited number of categories. For example, sex_vector contains the sex of 5 different individuals:
 
@@ -26,7 +26,7 @@ The function factor() will encode the vector as a factor:
 
 factor_sex_vector <- factor(sex_vector)
 
-# What's a factor and why would you use it? (3)
+## What's a factor and why would you use it? (3)
 
 There are two types of categorical variables: a nominal categorical variable and an ordinal categorical variable.
 
@@ -49,7 +49,7 @@ factor_temperature_vector
 #High   Low    High   Low    Medium
 #Levels: Low < Medium < High
 
-# Factor levels
+## Factor levels
 
 When you first get a data set, you will often notice that it contains factors with specific factor levels. However, sometimes you will want to change the names of these levels for clarity or other reasons. R allows you to do this with the function levels():
 
