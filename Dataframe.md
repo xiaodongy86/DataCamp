@@ -100,3 +100,91 @@ $ diameter: num  0.382 0.949 1 0.532 11.209 ...
 $ rotation: num  58.64 -243.02 1 1.03 0.41 ...
 
 $ rings   : logi  FALSE FALSE FALSE FALSE TRUE TRUE ...
+
+## Selection of data frame elements
+
+Similar to vectors and matrices, you select elements from a data frame with the help of square brackets [ ]. By using a comma, you can indicate what to select from the rows and the columns respectively. For example:
+
+my_df[1,2] selects the value at the first row and second column in my_df.
+my_df[1:3,2:4] selects rows 1, 2, 3 and columns 2, 3, 4 in my_df.
+Sometimes you want to select all elements of a row or column. For example, my_df[1, ] selects all elements of the first row. Let us now apply this technique on planets_df!
+
+**#The planets_df data frame from the previous exercise is pre-loaded**
+head(planets_df)
+**#Select first 5 values of diameter column**
+planets_df[1:5,3]
+
+## Only planets with rings
+
+You will often want to select an entire column, namely one specific variable from a data frame. If you want to select all elements of the variable diameter, for example, both of these will do the trick:
+
+planets_df[,3]
+planets_df[,"diameter"]
+However, there is a short-cut. If your columns have names, you can use the $ sign:
+
+planets_df$diameter
+
+## Only planets with rings (2)
+
+You probably remember from high school that some planets in our solar system have rings and others do not. Unfortunately you can not recall their names. Could R help you out?
+
+If you type rings_vector in the console, you get:
+
+[1] FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE
+This means that the first four observations (or planets) do not have a ring (FALSE), but the other four do (TRUE). However, you do not get a nice overview of the names of these planets, their diameter, etc. Let's try to use rings_vector to select the data for the four planets with rings.
+
+## Only planets with rings but shorter
+
+So what exactly did you learn in the previous exercises? You selected a subset from a data frame (planets_df) based on whether or not a certain condition was true (rings or no rings), and you managed to pull out all relevant data. Pretty awesome! By now, NASA is probably already flirting with your CV ;-).
+
+Now, let us move up one level and use the function subset(). You should see the subset() function as a short-cut to do exactly the same as what you did in the previous exercises.
+
+subset(my_df, subset = some_condition)
+The first argument of subset() specifies the data set for which you want a subset. By adding the second argument, you give R the necessary information and conditions to select the correct subset.
+
+The code below will give the exact same result as you got in the previous exercise, but this time, you didn't need the rings_vector!
+
+subset(planets_df, subset = rings)
+
+**#Select planets with diameter < 1**
+
+subset(planets_df,subset= diameter <1)
+
+
+## Sorting
+
+Making and creating rankings is one of mankind's favorite affairs. These rankings can be useful (best universities in the world), entertaining (most influential movie stars) or pointless (best 007 look-a-like).
+
+In data analysis you can sort your data according to a certain variable in the data set. In R, this is done with the help of the function order().
+
+order() is a function that gives you the ranked position of each element when it is applied on a variable, such as a vector for example:
+
+> a <- c(100, 10, 1000)
+> order(a)
+[1] 2 1 3
+10, which is the second element in a, is the smallest element, so 2 comes first in the output of order(a). 100, which is the first element in a is the second smallest element, so 1 comes second in the output of order(a).
+
+This means we can use the output of order(a) to reshuffle a:
+
+> a[order(a)]
+[1]   10  100 1000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
