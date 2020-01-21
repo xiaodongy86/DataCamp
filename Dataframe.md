@@ -170,9 +170,17 @@ This means we can use the output of order(a) to reshuffle a:
 [1]   10  100 1000
 
 
+## Sorting your data frame
 
+Alright, now that you understand the order() function, let us do something useful with it. You would like to rearrange your data frame such that it starts with the smallest planet and ends with the largest one. A sort on the diameter column.
 
+**#Use order() to create positions**
 
+positions <- order(planets_df$diameter)  
+
+**#Use positions to sort planets_df**
+
+planets_df[positions,]
 
 
 
