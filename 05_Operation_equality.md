@@ -8,3 +8,19 @@ TRUE != FALSE
 "Rchitect" != "rchitect"
 
 Notice from the last expression that R is case sensitive: "R" is not equal to "r". Keep this in mind when solving the exercises in this chapter!
+
+**#Comparison of logicals**
+
+TRUE == FALSE
+
+**#Comparison of numerics**
+
+-6*14 != 17-101
+
+**#Comparison of character strings**
+
+"useR" == "user"
+
+**#Compare a logical with a numeric**
+
+TRUE == 1
