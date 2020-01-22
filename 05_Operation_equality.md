@@ -27,3 +27,5 @@ TRUE == FALSE
 **#Compare a logical with a numeric**
 
 TRUE == 1
+
+Awesome! Since TRUE coerces to 1 under the hood, TRUE == 1 evaluates to TRUE. Make sure not to mix up == (comparison) and = (assignment), == is what need to check the equality of R objects.
