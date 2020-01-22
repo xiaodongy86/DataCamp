@@ -92,7 +92,7 @@ if (medium == "LinkedIn") {
 }
 
 **#Control structure for num_views**
-
+```r
 if (num_views > 15) {
   print("You're popular!")
 } else if (num_views <= 15 & num_views > 10) {
@@ -100,7 +100,7 @@ if (num_views > 15) {
 } else {
   print("Try to be more visible!")
 }
-
+```
 ## Else if 2.0
 
 You can do anything you want inside if-else constructs. You can even put in another set of conditional statements. Examine the following code chunk:
