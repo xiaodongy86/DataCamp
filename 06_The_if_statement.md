@@ -90,7 +90,6 @@ if (medium == "LinkedIn") {
 }
 
 # Control structure for num_views
-
 if (num_views > 15) {
   print("You're popular!")
 } else if (num_views <= 15 & num_views > 10) {
