@@ -1,10 +1,11 @@
 ## The if statement
 
 Before diving into some exercises on the if statement, have another look at its syntax:
-
+```r
 if (condition) {
   expr
 }
+```
 Remember your vectors with social profile views? Let's look at it from another angle. The medium variable gives information about the social website; the num_views variable denotes the actual number of views that particular medium had on the last day of your recordings. Both these variables have already been defined in the editor.
 
 ```r
@@ -25,13 +26,13 @@ print("You are popular!")
 ## Add an else
 
 You can only use an else statement in combination with an if statement. The else statement does not require a condition; its corresponding code is simply run if all of the preceding conditions in the control structure are FALSE. Here's a recipe for its usage:
-
+```r
 if (condition) {
   expr1
 } else {
   expr2
 }
-
+```
 **It's important that the else keyword comes on the same line as the closing bracket of the if part!**
 
 Both if statements that you coded in the previous exercises are already available in the editor. It's now up to you to extend them with the appropriate else statements!
