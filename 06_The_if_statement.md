@@ -75,14 +75,12 @@ if (condition1) {
 
 Again, It's important that the else if keywords comes on the same line as the closing bracket of the previous part of the control construct!
 
-
-**#Variables related to your last day of recordings**
-
+```r
+# Variables related to your last day of recordings
 medium <- "LinkedIn"
 num_views <- 14
 
-**#Control structure for medium**
-
+# Control structure for medium
 if (medium == "LinkedIn") {
   print("Showing LinkedIn information")
 } else if (medium == "Facebook") {
@@ -91,8 +89,8 @@ if (medium == "LinkedIn") {
   print("Unknown medium")
 }
 
-**#Control structure for num_views**
-```r
+# Control structure for num_views
+
 if (num_views > 15) {
   print("You're popular!")
 } else if (num_views <= 15 & num_views > 10) {
