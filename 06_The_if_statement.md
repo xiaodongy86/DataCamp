@@ -121,9 +121,27 @@ If number is set to 4, "extra small" gets printed out to the console.
 If number is set to 2500, R will generate an error, as result will not be defined.
 
 
+## Take control!
 
+In this exercise, you will combine everything that you've learned so far: relational operators, logical operators and control constructs. You'll need it all!
 
+In the editor, we've coded two values beforehand: li and fb, denoting the number of profile views your LinkedIn and Facebook profile had on the last day of recordings. Go through the instructions to create R code that generates a 'social media score', sms, based on the values of li and fb.
+```r
+# Variables related to your last day of recordings
+li <- 15
+fb <- 9
 
+# Code the control-flow construct
+if (li >= 15 & fb >= 15) {
+  sms <- 2 * (li + fb)
+} else if (li <10 & fb <10) {
+  sms <- 0.5 * (li + fb)
+} else {
+  sms <- li + fb
+}
 
+# Print the resulting sms to the console
+print(sms)
+```
 
 
