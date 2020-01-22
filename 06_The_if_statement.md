@@ -36,26 +36,25 @@ if (condition) {
 
 Both if statements that you coded in the previous exercises are already available in the editor. It's now up to you to extend them with the appropriate else statements!
 
-#Variables related to your last day of recordings
+```r
+# Variables related to your last day of recordings
 medium <- "LinkedIn"
 num_views <- 14
 
-**#Control structure for medium**
-
+# Control structure for medium
 if (medium == "LinkedIn") {
   print("Showing LinkedIn information")
 } else {
   print("Unknown medium")
 }
 
-**#Control structure for num_views**
-
+# Control structure for num_views
 if (num_views > 15) {
   print("You're popular!")
 } else {
   print("Try to be more visible!")
 }
-
+```
 ## Customize further: else if
 
 The else if statement allows you to further customize your control structure. You can add as many else if statements as you like. Keep in mind that R ignores the remainder of the control structure once a condition has been found that is TRUE and the corresponding expressions have been executed. Here's an overview of the syntax to freshen your memory:
