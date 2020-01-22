@@ -106,6 +106,7 @@ if (num_views > 15) {
 You can do anything you want inside if-else constructs. You can even put in another set of conditional statements. Examine the following code chunk:
 
 > if (number < 10) {
+>
 >   if (number < 5) {
 >    result <- "extra small"
 >    } else {
