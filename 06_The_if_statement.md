@@ -116,6 +116,7 @@ if (number < 10) {
    } else {
    result <- "large"
    }
+ 
  print(result)
 
 Have a look at the following statements:
