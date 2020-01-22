@@ -7,24 +7,21 @@ if (condition) {
 }
 Remember your vectors with social profile views? Let's look at it from another angle. The medium variable gives information about the social website; the num_views variable denotes the actual number of views that particular medium had on the last day of your recordings. Both these variables have already been defined in the editor.
 
-**#Variables related to your last day of recordings**
-
+```r
+# Variables related to your last day of recordings
 medium <- "LinkedIn"
-
 num_views <- 14
 
-**#Examine the if statement for medium**
-
+# Examine the if statement for medium
 if (medium == "LinkedIn") {
   print("Showing LinkedIn information")
 }
 
-**#Write the if statement for num_views**
-
+# Write the if statement for num_views
 if (num_views > 15){
 print("You are popular!")
   }
-
+```
 ## Add an else
 
 You can only use an else statement in combination with an if statement. The else statement does not require a condition; its corresponding code is simply run if all of the preceding conditions in the control structure are FALSE. Here's a recipe for its usage:
