@@ -157,7 +157,19 @@ With the things you've learned by now, you're able to solve pretty cool problems
 
 Instead of recording the number of views for your own LinkedIn profile, suppose you conducted a survey inside the company you're working for. You've asked every employee with a LinkedIn profile how many visits their profile has had over the past seven days. You stored the results in a data frame called li_df. This data frame is available in the workspace; type li_df in the console to check it out.
 
+**#li_df is pre-loaded in your workspace**
 
+**#Select the second column, named day2, from li_df: second**
+
+second <- li_df[,2]
+
+**#Build a logical vector, TRUE if value in second is extreme: extremes**
+
+extremes <- second >25 | second < 5
+
+**#Count the number of TRUEs in extremes**
+
+sum(extremes)
 
 
 
