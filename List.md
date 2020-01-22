@@ -1,5 +1,5 @@
 # Lists 
-## why would you need them?
+## Why would you need them?
 
 Congratulations! At this point in the course you are already familiar with:
 
@@ -37,3 +37,20 @@ my_df <- mtcars[1:10,]
 **#Construct list with these different elements:**
 
 my_list <-list(my_vector, my_matrix, my_df)
+
+## Creating a named list
+
+Well done, you're on a roll!
+
+Just like on your to-do list, you want to avoid not knowing or remembering what the components of your list stand for. That is why you should give names to them:
+
+my_list <- list(name1 = your_comp1, 
+                name2 = your_comp2)
+                
+This creates a list with components that are named name1, name2, and so on. If you want to name your lists after you've created them, you can use the names() function as you did with vectors. The following commands are fully equivalent to the assignment above:
+
+my_list <- list(your_comp1, your_comp2)
+names(my_list) <- c("name1", "name2")
+
+
+
