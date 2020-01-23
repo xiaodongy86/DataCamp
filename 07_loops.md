@@ -135,9 +135,71 @@ for (i in 1:length(linkedin)){
 }
 ```
 
+## Loop over a list
 
+Looping over a list is just as easy and convenient as looping over a vector. There are again two different approaches here:
+```r
+primes_list <- list(2, 3, 5, 7, 11, 13)
 
+# loop version 1
+for (p in primes_list) {
+  print(p)
+}
 
+# loop version 2
+for (i in 1:length(primes_list)) {
+  print(primes_list[[i]])
+}
+```
+**Notice that you need double square brackets - [[ ]]** - to select the list elements in loop version 2.
+
+Suppose you have a list of all sorts of information on New York City: its population size, the names of the boroughs, and whether it is the capital of the United States. We've already prepared a list nyc with all this information in the editor (source: Wikipedia).
+```r
+# The nyc list is already specified
+nyc <- list(pop = 8405837, 
+            boroughs = c("Manhattan", "Bronx", "Brooklyn", "Queens", "Staten Island"), 
+            capital = FALSE)
+
+# Loop version 1
+for (item in nyc){
+  print(item)
+}
+
+# Loop version 2
+for (i in 1:length(nyc)){
+  print(nyc[[i]])
+}
+```
+
+## Loop over a matrix
+
+In your workspace, there's a matrix ttt, that represents the status of a tic-tac-toe game. It contains the values "X", "O" and "NA". Print out ttt in the console so you can have a closer look. On row 1 and column 1, there's "O", while on row 3 and column 2 there's "NA".
+
+To solve this exercise, you'll need a for loop inside a for loop, often called a nested loop. Doing this in R is a breeze! Simply use the following recipe:
+```r
+for (var1 in seq1) {
+  for (var2 in seq2) {
+    expr
+  }
+}
+```
+
+```r
+#Finish the nested for loops to go over the elements in ttt:
+#The outer loop should loop over the rows, with loop index i (use 1:nrow(ttt)).
+#The inner loop should loop over the columns, with loop index j (use 1:ncol(ttt)).
+#Inside the inner loop, make use of print() and paste() to print out information in the following format: "On row i and column j the board #contains x", where x is the value on that position.
+```r
+# The tic-tac-toe matrix ttt has already been defined for you
+ttt
+# define the double for loop
+for (i in 1:nrow(ttt)) {
+  for (j in 1:ncol(ttt)) {
+    #print(ttt[[i,j]])
+    print(paste0("On row ", i ,"and column ",j," the board contains ",ttt[[i,j]]))
+  }
+}
+```
 
 
 
