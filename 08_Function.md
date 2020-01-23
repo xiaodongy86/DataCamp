@@ -164,8 +164,45 @@ my_fun <- function(arg1, arg2 = val2) {
 }
 ```
 The editor on the right already includes an extended version of the pow_two() function from before. Can you finish it?
+```r
+#Add an optional argument, named print_info, that is TRUE by default.
+#Wrap an if construct around the print() function: this function should only be executed if print_info is TRUE.
+#Feel free to experiment with the pow_two() function you've just coded.
+# Finish the pow_two() function
+pow_two <- function(x, print_info = TRUE) {
+  y <- x ^ 2
+  if (print_info == TRUE){
+  print(paste(x, "to the power two equals", y))
+  }
+  return(y)
+}
+pow_two(2,print_info =F)
+pow_two(2)
+```
 
+## Function scoping
 
+An issue that Filip did not discuss in the video is function scoping. It implies that variables that are defined inside a function are not accessible outside that function. Try running the following code and see if you understand the results:
+```r
+pow_two <- function(x) {
+  y <- x ^ 2
+  return(y)
+}
+pow_two(4)
+y
+x
+```
+y was defined inside the pow_two() function and therefore it is not accessible outside of that function. This is also true for the function's arguments of course - x in this case.
+
+Which statement is correct about the following chunk of code? The function two_dice() is already available in the workspace.
+```r
+two_dice <- function() {
+  possibilities <- 1:6
+  dice1 <- sample(possibilities, size = 1)
+  dice2 <- sample(possibilities, size = 1)
+  dice1 + dice2
+}
+```
 
 
 
