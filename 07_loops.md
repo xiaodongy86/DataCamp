@@ -201,6 +201,67 @@ for (i in 1:nrow(ttt)) {
 }
 ```
 
+## Mix it up with control flow
+
+Let's return to the LinkedIn profile views data, stored in a vector linkedin. In the first exercise on for loops you already did a simple printout of each element in this vector. A little more in-depth interpretation of this data wouldn't hurt, right? Time to throw in some conditionals! As with the while loop, you can use the if and else statements inside the for loop.
+```r
+#Add code to the for loop that loops over the elements of the linkedin vector:
+#If the vector element's value exceeds 10, print out "You're popular!".
+#If the vector element's value does not exceed 10, print out "Be more visible!"
+# The linkedin vector has already been defined for you
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+
+# Code the for loop with conditionals
+for (li in linkedin) {
+  if (li > 10 ) {
+    print("You're popular!")
+  } else {
+    print("Be more visible!")
+  }
+  print(li)
+}
+```
+## Next, you break it
+
+In the editor on the right you'll find a possible solution to the previous exercise. The code loops over the linkedin vector and prints out different messages depending on the values of li.
+
+In this exercise, you will use the **break** and **next** statements:
+
+The break statement abandons the active loop: the remaining code in the loop is skipped and the loop is not iterated over anymore.
+The next statement skips the remainder of the code in the loop, but continues the iteration.
+```r
+# The linkedin vector has already been defined for you
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+
+# Adapt/extend the for loop
+for (li in linkedin) {
+  if (li > 10) {
+    print("You're popular!")
+  } else {
+    print("Be more visible!")
+  }
+   # Add if statement with break
+  if (li > 16){
+    print("This is ridiculous, I'm outta here!")
+    break
+    }
+  # Add if statement with next
+  if (li < 5){
+    print("This is too embarrassing!")
+    next
+  }
+  print(li)
+}
+```
+
+
+
+
+
+
+
+
+
 
 
 
