@@ -203,11 +203,151 @@ two_dice <- function() {
   dice1 + dice2
 }
 ```
+## R passes arguments by value
 
+The title gives it away already: R passes arguments by value. What does this mean? Simply put, it means that an R function cannot change the variable that you input to that function. Let's look at a simple example (try it in the console):
 
+triple <- function(x) {
+  x <- 3*x
+  x
+}
+a <- 5
+triple(a)
+a
+Inside the triple() function, the argument x gets overwritten with its value times three. Afterwards this new x is returned. If you call this function with a variable a set equal to 5, you obtain 15. But did the value of a change? If R were to pass a to triple() by reference, the override of the x inside the function would ripple through to the variable a, outside the function. However, R passes by value, so the R objects you pass to a function can never change unless you do an explicit assignment. a remains equal to 5, even after calling triple(a).
 
+Can you tell which one of the following statements is false about the following piece of code?
+```r
+increment <- function(x, inc = 1) {
+  x <- x + inc
+  x
+}
+count <- 5
+a <- increment(count, 2)
+b <- increment(count)
+count <- increment(count, 2)
+```
+## R you functional?
+```r
+#Finish the function definition for interpret(), that interprets the number of profile views on a single day:
+#The function takes one argument, num_views.
+#If num_views is greater than 15, the function prints out "You're popular!" to the console and returns num_views.
+#Else, the function prints out "Try to be more visible!" and returns 0.
+#Finally, call the interpret() function twice: on the first value of the linkedin vector and on the second element of the facebook vector.
+# The linkedin and facebook vectors have already been created for you
 
+# Define the interpret function
+interpret <- function(num_views) {
+  if (num_views > 15) {
+     print("You're popular!")
+     num_views
+  } else {
+     print("Try to be more visible!") 
+    0
+  }
+}
+# Call the interpret function twice
+interpret(linkedin[1])
+interpret(facebook[2])
+```
+## R you functional? (2)
 
+A possible implementation of the interpret() function is already available in the editor. In this exercise you'll be writing another function that will use the interpret() function to interpret all the data from your daily profile views inside a vector. Furthermore, your function will return the sum of views on popular days, if asked for. A for loop is ideal for iterating over all the vector elements. The ability to return the sum of views on popular days is something you can code through a function argument with a default value.
+Finish the template for the interpret_all() function:
+```r
+#Make return_sum an optional argument, that is TRUE by default.
+#Inside the for loop, iterate over all views: on every iteration, add the result of interpret(v) to count. Remember that interpret(v) #returns v for popular days, and 0 otherwise. At the same time, interpret(v) will also do some printouts.
+#Finish the if construct:
+#If return_sum is TRUE, return count.
+#Else, return NULL.
+#Call this newly defined function on both linkedin and facebook.
+
+# The linkedin and facebook vectors have already been created for you
+linkedin <- c(16, 9, 13, 5, 2, 17, 14)
+facebook <- c(17, 7, 5, 16, 8, 13, 14)
+
+# The interpret() can be used inside interpret_all()
+interpret <- function(num_views) {
+  if (num_views > 15) {
+    print("You're popular!")
+    return(num_views)
+  } else {
+    print("Try to be more visible!")
+    return(0)
+  }
+}
+
+# Define the interpret_all() function
+# views: vector with data to interpret
+# return_sum: return total number of views on popular days?
+interpret_all <- function(views, return_sum = TRUE) {
+  count <- 0
+
+  for (v in views) {
+      count <- count + interpret(v)
+  }
+
+  if (return_sum == TRUE) {
+      return(count)
+
+  } else {
+      return(NULL)
+  }
+}
+
+# Call the interpret_all() function on both linkedin and facebook
+interpret_all(linkedin)
+interpret_all(facebook)
+```
+
+## Load an R Package
+
+There are basically two extremely important functions when it comes down to R packages:
+
+**install.packages()**, which as you can expect, installs a given package.
+**library()** which loads packages, i.e. attaches them to the search list on your R workspace.
+To install packages, you need administrator privileges. This means that **install.packages()** will thus not work in the DataCamp interface. However, almost all CRAN packages are installed on our servers. You can load them with **library()**.
+
+In this exercise, you'll be learning how to load the ggplot2 package, a powerful package for data visualization. You'll use it to create a plot of two variables of the mtcars data frame. The data has already been prepared for you in the workspace.
+
+Before starting, execute the following commands in the console:
+
+search(), to look at the currently attached packages and
+qplot(mtcars$wt, mtcars$hp), to build a plot of two variables of the mtcars data frame.
+An error should occur, because you haven't loaded the ggplot2 package yet!
+```r
+# Load the ggplot2 package
+library(ggplot2)
+
+# Retry the qplot() function
+qplot(mtcars$wt, mtcars$hp)
+
+# Check out the currently attached packages again
+search()
+```
+
+## Different ways to load a package
+
+The **library()** and **require()** functions are not very picky when it comes down to argument types: both library(rjson) and library("rjson") work perfectly fine for loading a package.
+
+Have a look at some more code chunks that (attempt to) load one or more packages:
+```r
+# Chunk 1
+library(data.table)
+require(rjson)
+
+# Chunk 2
+library("data.table")
+require(rjson)
+
+# Chunk 3
+library(data.table)
+require(rjson, character.only = TRUE)
+
+# Chunk 4
+library(c("data.table", "rjson"))
+Select the option that lists all of the chunks that do not generate an error. The console on the right is yours to experiment in.
+```
 
 
 
