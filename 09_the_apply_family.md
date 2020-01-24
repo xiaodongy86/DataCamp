@@ -55,3 +55,57 @@ select_second <- function(x) {
 # Apply select_second() over split_low: years
 years <- lapply(split_low,select_second)
 ```
+## lapply and anonymous functions
+
+Writing your own functions and then using them inside lapply() is quite an accomplishment! But defining functions to use them only once is kind of overkill, isn't it? That's why you can use so-called anonymous functions in R.
+
+Previously, you learned that functions in R are objects in their own right. This means that they aren't automatically bound to a name. When you create a function, you can use the assignment operator to give the function a name. It's perfectly possible, however, to not give the function a name. This is called an anonymous function:
+```r
+# Named function
+triple <- function(x) { 3 * x }
+
+# Anonymous function with same implementation
+function(x) { 3 * x }
+
+# Use anonymous function inside lapply()
+lapply(list(1,2,3), function(x) { 3 * x })
+split_low is defined for you.
+```
+```r
+# split_low has been created for you
+# Transform: use anonymous function inside lapply
+names <- lapply(split_low, function(x) {x[1]})
+
+# Transform: use anonymous function inside lapply
+years <- lapply(split_low, function(x) {x[2]})
+```
+
+## Use lapply with additional arguments
+
+In the video, the **triple()** function was transformed to the **multiply()** function to allow for a more generic approach. **lapply()** provides a way to handle functions that require more than one argument, such as the **multiply()** function:
+```r
+multiply <- function(x, factor) {
+  x * factor
+}
+lapply(list(1,2,3), multiply, factor = 3)
+```
+On the right we've included a generic version of the select functions that you've coded earlier: **select_el()**. It takes a vector as its first argument, and an index as its second argument. It returns the vector's element at the specified index.
+
+```r
+# Definition of split_low
+pioneers <- c("GAUSS:1777", "BAYES:1702", "PASCAL:1623", "PEARSON:1857")
+split <- strsplit(pioneers, split = ":")
+split_low <- lapply(split, tolower)
+
+# Generic select function
+select_el <- function(x, index) {
+  x[index]
+}
+
+# Use lapply() twice on split_low: names and years
+names <- lapply(split_low,select_el,index = 1)
+years <- lapply(split_low,select_el,index = 2)
+```
+
+
+
