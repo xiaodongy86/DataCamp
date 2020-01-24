@@ -125,4 +125,24 @@ lapply(temp,max)
 # Use sapply() to find each day's maximum temperature
 sapply(temp,max)
 ```
+## sapply with functions that return NULL
+
+You already have some apply tricks under your sleeve, but you're surely hungry for some more, aren't you? In this exercise, you'll see how sapply() reacts when it is used to apply a function that returns NULL over a vector or a list.
+
+A function print_info(), that takes a vector and prints the average of this vector, has already been created for you. It uses the cat() function.
+```r
+# Definition of print_info()
+print_info <- function(x) {
+  cat("The average temperature is", mean(x), "\n")
+}
+
+# Apply print_info() over temp using sapply()
+sapply(temp,print_info)
+
+# Apply print_info() over temp using lapply()
+lapply(temp,print_info)
+```
+Notice here that, quite surprisingly, sapply() does not simplify the list of NULL's. That's because the 'vector-version' of a list of NULL's would simply be a NULL, which is no longer a vector with the same length as the input. 
+
+
 
