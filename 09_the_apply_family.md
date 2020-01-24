@@ -106,6 +106,23 @@ select_el <- function(x, index) {
 names <- lapply(split_low,select_el,index = 1)
 years <- lapply(split_low,select_el,index = 2)
 ```
+## How to use sapply
 
+You can use sapply() similar to how you used lapply(). The first argument of sapply() is the list or vector X over which you want to apply a function, FUN. Potential additional arguments to this function are specified afterwards (...):
 
+sapply(X, FUN, ...)
+In the next couple of exercises, you'll be working with the variable temp, that contains temperature measurements for 7 days. temp is a list of length 7, where each element is a vector of length 5, representing 5 measurements on a given day. This variable has already been defined in the workspace: type str(temp) to see its structure.
+```r
+# Use lapply() to find each day's minimum temperature
+lapply(temp,min)
+
+# Use sapply() to find each day's minimum temperature
+sapply(temp,min)
+
+# Use lapply() to find each day's maximum temperature
+lapply(temp,max)
+
+# Use sapply() to find each day's maximum temperature
+sapply(temp,max)
+```
 
